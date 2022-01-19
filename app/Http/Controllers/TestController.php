@@ -6,19 +6,21 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
+use Mail;
 
 class TestController extends Controller {
 
+#Initial
    public function index() {
       echo "<br>Test Controller.";
    }
-
+#Request
    public function testRequest(Request $request){
 
     echo $request->url();
 
    }
-
+#cookie
     public function setCookie(Request $request) {
         $minutes = 1;
         $response = new Response('Hello World');
@@ -29,11 +31,11 @@ class TestController extends Controller {
         $value = $request->cookie('name');
         echo $value;
     }
-
+#redirect
     public function redirectFun(){
         echo "Redirect function test!.";
     }
-
+#localizaion
     public function localization(Request $request,$locale) {
         //set’s application’s locale
         app()->setLocale($locale);
@@ -41,7 +43,7 @@ class TestController extends Controller {
         //Gets the translated message and displays it
         echo trans('lang.msg');
      }
-
+#Session
      public function accessSessionData(Request $request) {
         if($request->session()->has('my_name'))
            echo $request->session()->get('my_name');
@@ -56,7 +58,7 @@ class TestController extends Controller {
         $request->session()->forget('my_name');
         echo "Data has been removed from session.";
      }
-
+#Validation
      public function showform() {
         return view('login');
      }
@@ -68,7 +70,7 @@ class TestController extends Controller {
            'password'=>'required'
         ]);
      }
-
+#FIleUP
      public function fileup() {
         return view('fileupload');
      }
@@ -97,6 +99,37 @@ class TestController extends Controller {
         //Move Uploaded File
         $destinationPath = 'uploads';
         $file->move($destinationPath,$file->getClientOriginalName());
+     }
+#Mail
+     public function basic_email() {
+        $data = array('name'=>"Ei Thiri Tun");
+     
+        Mail::send(['text'=>'mail'], $data, function($message) {
+           $message->to('xxxxx@gmail.com', 'Mail Testing From Laravel')->subject
+              ('Laravel Basic Testing Mail');
+           $message->from('xxxxx@gmail.com','Ei Thiriri');
+        });
+        echo "Basic Email Sent. Check your inbox.";
+     }
+     public function html_email() {
+        $data = array('name'=>"Ei Thiri Tun");
+        Mail::send('mail', $data, function($message) {
+           $message->to('xxxxx@gmail.com', 'Mail Testing From Laravel1')->subject
+              ('Laravel HTML Testing Mail');
+           $message->from('xxxxx@gmail.com','Ei Thiriri');
+        });
+        echo "HTML Email Sent. Check your inbox.";
+     }
+     public function attachment_email() {
+        $data = array('name'=>"Ei Thiri Tun");
+        Mail::send('mail', $data, function($message) {
+           $message->to('xxxxx@gmail.com', 'Mail Testing From Laravel2')->subject
+              ('Laravel Testing Mail with Attachment');
+           $message->attach('C:\Users\FAMILY\testLaravel\public\uploads\BTS.jpg');
+           $message->attach('C:\Users\FAMILY\testLaravel\public\uploads\BTS-1.jpeg');
+           $message->from('xxxxx@gmail.com','Ei Thiriri');
+        });
+        echo "Email Sent with attachment. Check your inbox.";
      }
 
 }

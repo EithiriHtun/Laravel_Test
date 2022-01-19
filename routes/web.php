@@ -64,3 +64,8 @@ Route::post('/validation','App\Http\Controllers\TestController@validateform');
 #fileupload
 Route::get('/uploadfile','App\Http\Controllers\TestController@fileup');
 Route::post('/uploadfile','App\Http\Controllers\TestController@showUploadFile');
+
+#mail
+Route::get('sendbasicemail','App\Http\Controllers\TestController@basic_email');
+Route::get('sendhtmlemail','App\Http\Controllers\TestController@html_email');
+Route::get('sendattachmentemail','App\Http\Controllers\TestController@attachment_email');
