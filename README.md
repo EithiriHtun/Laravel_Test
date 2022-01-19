@@ -1,7 +1,8 @@
 # Project setup 
-  # composer create-project laravel/laravel –-prefer-dist
-  # composer create-project laravel/laravel test [dev-develop]
-  
+  # composer create-project laravel/laravel –-prefer-dist (nn)
+  # composer create-project laravel/laravel test [dev-develop] (nn)
+  # composer create-project laravel/laravel [ProjectName] 
+
 # Run Project
   # php artisan serve
 
