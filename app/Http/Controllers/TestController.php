@@ -7,6 +7,7 @@ use App\Http\Requests;
 use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Mail;
+use Illuminate\Contracts\Encryption\DecryptException;
 
 class TestController extends Controller {
 
@@ -137,5 +138,37 @@ class TestController extends Controller {
         $msg = "This is a testing for Ajax resonse message!.";
         return response()->json(array('msg'=> $msg), 200);
      }
+
+   #Encryption
+   public function storeSecret(Request $request, $id) {
+      $user = User::findOrFail($id);
+      $user->fill([
+         'secret' => encrypt($request->secret)
+      ])->save();
+   }
+
+   #Encryption
+   public function fixSecret(Request $request, $id) {
+         // Exception for decryption thrown in facade
+         try {
+            $decrypted = decrypt($encryptedValue);
+         } catch (DecryptException $e) {
+            //
+         }
+   }
+
+   #Hashing
+   public function update(Request $request) {
+      // Validate the new password length...
+      $request->user()->fill([
+         'password' => Hash::make($request->newPassword) // Hashing passwords
+      ])->save();
+   }
+
+   #Pagination
+   public function pagination() {
+      $users = DB::table('users')->paginate(15);
+      return view('user.index', ['users' => $users]);
+   }
 
 }
