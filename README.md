@@ -28,6 +28,16 @@
 #Create New Provide
   # php artisan make:provider [TestFacadesServiceProvider]
 
+#Authencation
+  # php artisan make:auth
+
+#Key Generate
+  # php artisan key:generate
+
+#Dump server
+ # php artisan dump-server
+ # Or send the output to an HTML file
+ # php artisan dump-server --format=html > dump.html
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
