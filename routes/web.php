@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Test\TestFacades;
 
 /*
 |--------------------------------------------------------------------------
@@ -75,3 +76,8 @@ Route::get('ajax',function() {
    return view('message');
 });
 Route::post('/getmsg','App\Http\Controllers\TestController@Ajax');
+
+#Provider
+Route::get('/facadeex', function() {
+   return TestFacades::testingFacades();
+});

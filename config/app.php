@@ -174,6 +174,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        App\Providers\TestForProvider::class,
 
     ],
 
@@ -229,7 +230,11 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'TestFacades' => App\Test\Facades\TestFacades::class,
 
     ],
+
+    #log file
+    // 'log' => env('APP_LOG','daily'), 
 
 ];
