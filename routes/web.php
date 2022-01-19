@@ -21,3 +21,13 @@ Route::get('role',[
     'middleware' => 'Test',
     'uses' => 'App\Http\Controllers\TestController@index',
  ]);
+
+ Route::get('request','App\Http\Controllers\TestController@testRequest');
+
+ Route::get('/register',function() {
+    return view('register');
+ });
+
+ Route::post('/user/register',array('uses'=>'App\Http\Controllers\UserController@UserRegister'));
+
+ 
