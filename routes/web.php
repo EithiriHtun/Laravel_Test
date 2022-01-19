@@ -30,4 +30,6 @@ Route::get('role',[
 
  Route::post('/user/register',array('uses'=>'App\Http\Controllers\UserController@UserRegister'));
 
- 
+ Route::get('cookie/set','App\Http\Controllers\TestController@setCookie');
+
+ Route::get('cookie/get','App\Http\Controllers\TestController@getCookie');
