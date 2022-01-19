@@ -42,3 +42,8 @@ Route::get('role',[
  Route::get('redirect',function() {
     return redirect()->action('App\Http\Controllers\TestController@redirectFun');
  });
+
+ ##form
+ Route::get('/form',function() {
+    return view('form');
+ });
