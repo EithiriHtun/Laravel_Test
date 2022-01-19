@@ -132,4 +132,10 @@ class TestController extends Controller {
         echo "Email Sent with attachment. Check your inbox.";
      }
 
+    #Ajax
+    public function Ajax() {
+        $msg = "This is a testing for Ajax resonse message!.";
+        return response()->json(array('msg'=> $msg), 200);
+     }
+
 }

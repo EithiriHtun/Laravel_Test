@@ -69,3 +69,9 @@ Route::post('/uploadfile','App\Http\Controllers\TestController@showUploadFile');
 Route::get('sendbasicemail','App\Http\Controllers\TestController@basic_email');
 Route::get('sendhtmlemail','App\Http\Controllers\TestController@html_email');
 Route::get('sendattachmentemail','App\Http\Controllers\TestController@attachment_email');
+
+#ajax
+Route::get('ajax',function() {
+   return view('message');
+});
+Route::post('/getmsg','App\Http\Controllers\TestController@Ajax');
