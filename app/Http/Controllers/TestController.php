@@ -30,4 +30,8 @@ class TestController extends Controller {
         echo $value;
     }
 
+    public function redirectFun(){
+        echo "Redirect function test!.";
+    }
+
 }

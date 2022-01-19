@@ -24,12 +24,21 @@ Route::get('role',[
 
  Route::get('request','App\Http\Controllers\TestController@testRequest');
 
+ ##view and request and response
  Route::get('/register',function() {
     return view('register');
  });
 
  Route::post('/user/register',array('uses'=>'App\Http\Controllers\UserController@UserRegister'));
 
+ ##cookie
  Route::get('cookie/set','App\Http\Controllers\TestController@setCookie');
 
  Route::get('cookie/get','App\Http\Controllers\TestController@getCookie');
+
+ ##Redirect
+ Route::get('testre','App\Http\Controllers\TestController@redirectFun');
+
+ Route::get('redirect',function() {
+    return redirect()->action('App\Http\Controllers\TestController@redirectFun');
+ });
