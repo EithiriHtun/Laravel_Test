@@ -57,4 +57,16 @@ class TestController extends Controller {
         echo "Data has been removed from session.";
      }
 
+     public function showform() {
+        return view('login');
+     }
+     public function validateform(Request $request) {
+        print_r($request->all());
+        echo "eithiri";
+        $this->validate($request,[
+           'username'=>'required|max:8',
+           'password'=>'required'
+        ]);
+     }
+
 }

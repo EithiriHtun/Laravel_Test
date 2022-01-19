@@ -55,3 +55,7 @@ Route::get('role',[
  Route::get('session/get','App\Http\Controllers\TestController@accessSessionData');
 Route::get('session/set','App\Http\Controllers\TestController@storeSessionData');
 Route::get('session/remove','App\Http\Controllers\TestController@deleteSessionData');
+
+##Validation
+Route::get('/validation','App\Http\Controllers\TestController@showform');
+Route::post('/validation','App\Http\Controllers\TestController@validateform');
