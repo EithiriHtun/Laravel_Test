@@ -50,3 +50,8 @@ Route::get('role',[
 
  #localization
  Route::get('localization/{locale}','App\Http\Controllers\TestController@localization');
+
+ ##session
+ Route::get('session/get','App\Http\Controllers\TestController@accessSessionData');
+Route::get('session/set','App\Http\Controllers\TestController@storeSessionData');
+Route::get('session/remove','App\Http\Controllers\TestController@deleteSessionData');
