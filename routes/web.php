@@ -59,3 +59,8 @@ Route::get('session/remove','App\Http\Controllers\TestController@deleteSessionDa
 ##Validation
 Route::get('/validation','App\Http\Controllers\TestController@showform');
 Route::post('/validation','App\Http\Controllers\TestController@validateform');
+
+
+#fileupload
+Route::get('/uploadfile','App\Http\Controllers\TestController@fileup');
+Route::post('/uploadfile','App\Http\Controllers\TestController@showUploadFile');
