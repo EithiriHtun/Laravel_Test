@@ -47,3 +47,6 @@ Route::get('role',[
  Route::get('/form',function() {
     return view('form');
  });
+
+ #localization
+ Route::get('localization/{locale}','App\Http\Controllers\TestController@localization');

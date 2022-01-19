@@ -34,4 +34,12 @@ class TestController extends Controller {
         echo "Redirect function test!.";
     }
 
+    public function localization(Request $request,$locale) {
+        //set’s application’s locale
+        app()->setLocale($locale);
+        
+        //Gets the translated message and displays it
+        echo trans('lang.msg');
+     }
+
 }
