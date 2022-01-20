@@ -39,6 +39,13 @@
  # Or send the output to an HTML file
  # php artisan dump-server --format=html > dump.html
 
+#Databse connect 
+ #php artisan migrate
+
+#If occur 404 Not Found 
+  # php artisan route:cache
+
+
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
