@@ -1,18 +1,18 @@
-# Project setup 
+#Project setup 
   # composer create-project laravel/laravel –-prefer-dist (nn)
   # composer create-project laravel/laravel test [dev-develop] (nn)
   # composer create-project laravel/laravel [ProjectName] 
 
-# Run Project
+#Run Project
   # php artisan serve
 
-# Create Middleware
+#Create Middleware
   # php artisan make:middleware [TestMiddleware]
 
-# Create Controller
+#Create Controller
   # php artisan make:controller [TestController]
  
-# Create Namespace
+#Create Namespace
   # php artisan app:name [Name]
   # use [Name]
 
