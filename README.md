@@ -40,7 +40,7 @@
  # php artisan dump-server --format=html > dump.html
 
 #Databse connect 
- #php artisan migrate
+ # php artisan migrate
 
 #If occur 404 Not Found 
   # php artisan route:cache
