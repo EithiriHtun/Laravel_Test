@@ -9,12 +9,13 @@ class TestForProvider extends ServiceProvider
     /**
      * Register services.
      *
+     * 
      * @return void
      */
     public function register() {
-        App::bind('test',function() {
-           return new \App\Test\TestFacades;
-        });
+        // App::bind('test',function() {
+        //    return new \App\Test\TestFacades;
+        // });
      }
 
     /**

@@ -81,3 +81,21 @@ Route::post('/getmsg','App\Http\Controllers\TestController@Ajax');
 Route::get('/facadeex', function() {
    return TestFacades::testingFacades();
 });
+
+#DB
+#Create
+Route::get('insert','App\Http\Controllers\TestController@insertform');
+Route::post('create','App\Http\Controllers\TestController@insert');
+
+#Delete
+Route::get('delete-records','App\Http\Controllers\TestController@delete');
+Route::get('delete/{id}','App\Http\Controllers\TestController@destroy');
+
+#Get
+Route::get('view-records','App\Http\Controllers\TestController@getData');
+
+#Update
+Route::get('edit-records','App\Http\Controllers\TestController@updatedata');
+Route::get('edit/{id}','App\Http\Controllers\TestController@show');
+Route::post('edit/{id}','App\Http\Controllers\TestController@edit');
+

@@ -8,6 +8,8 @@ use Illuminate\Http\Response;
 use App\Http\Controllers\Controller;
 use Mail;
 use Illuminate\Contracts\Encryption\DecryptException;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class TestController extends Controller {
 
@@ -170,5 +172,89 @@ class TestController extends Controller {
       $users = DB::table('users')->paginate(15);
       return view('user.index', ['users' => $users]);
    }
+
+   #DB 
+   #Create
+   public function insertform() {
+      return view('stud_create');
+   }
+	
+   public function insert(Request $request) {
+      $name = $request->input('stud_name');
+      DB::insert('insert into student (name) values(?)',[$name]);
+      echo "Record inserted successfully.<br/>";
+      echo '<a href = "/insert">Click Here</a> to go back.';
+   }
+
+   #Delete
+   public function delete() {
+      $users = DB::select('select * from student');
+      return view('stud_delete_view',['users'=>$users]);
+   }
+   public function destroy($id) {
+      DB::delete('delete from student where id = ?',[$id]);
+      echo "Record deleted successfully.<br/>";
+      echo '<a href = "/delete-records">Click Here</a> to go back.';
+   }
+
+   #Update
+   public function updatedata() {
+      $users = DB::select('select * from student');
+      return view('stud_edit_view',['users'=>$users]);
+   }
+   public function show($id) {
+      $users = DB::select('select * from student where id = ?',[$id]);
+      return view('stud_update',['users'=>$users]);
+   }
+   public function edit(Request $request,$id) {
+      $name = $request->input('stud_name');
+      DB::update('update student set name = ? where id = ?',[$name,$id]);
+      echo "Record updated successfully.<br/>";
+      echo '<a href = "/edit-records">Click Here</a> to go back.';
+   } 
+  
+    #Retrieve
+    public function getData() {
+      $users = DB::select('select * from student');
+      // print_r($users);
+      return view('stud_view',['users'=>$users]);
+   }
+
+
+//    #Auth
+//    /**
+//       * Create a new controller instance.
+//       *
+//       * @return void
+//    */
+   
+//   public function __construct() {
+//    $this->middleware('auth');
+//    }
+
+//    /**
+//       * Show the application dashboard.
+//       *
+//       * @return \Illuminate\Http\Response
+//    */
+
+//    public function auth() {
+//       return view('home');
+//    }
+
+//    #Login
+//    /**
+//       * Handling authentication request
+//       *
+//       * @return Response
+//    */
+
+//   public function authenticate() {
+//       if (Auth::attempt(['email' => $email, 'password' => $password])) {
+      
+//          // Authentication passed...
+//          return redirect()->intended('dashboard');
+//       }
+//    }
 
 }
