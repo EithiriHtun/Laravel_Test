@@ -46,6 +46,18 @@
   # php artisan route:cache
 
 
+#CSS and JS Error
+  # composer require laravel/ui --dev
+  # php artisan ui bootstrap
+  # composer require laravel/ui  
+  # php artisan ui vue --auth
+  # php artisan ui bootstrap  
+  # npm run build 
+  # nvm install 10.15.3 
+  # npm install 
+  # npm run dev
+  
+  
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
