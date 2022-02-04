@@ -56,7 +56,19 @@
   # nvm install 10.15.3 
   # npm install 
   # npm run dev
+  # npm run dev
+
+#Php Unit Test
+ # php artisan make:test [UserTest]
+ # php artisan make:test [UserTest] --unit
+ # php artisan make:test UserTest --pest
+ # php artisan make:test UserTest --unit --pest
+ 
+#Run phpunit test
+ # php artisan test
   
+  
+
   
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
